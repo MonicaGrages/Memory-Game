@@ -58,6 +58,7 @@ var reset = function() {
 	for (var i=0; i<cards.length; i++) {
 	document.querySelectorAll("img")[i].setAttribute("src", "images/back.png");
 	}
+	cardsInPlay = [];
 };
 
 var button = document.getElementById("button");
