@@ -30,12 +30,15 @@ var checkForMatch = function() {
 			document.querySelector(".matchMessage").innerHTML="You found a match!";
 			document.querySelector(".matchMessage").style.color="#00A6B3";
 			// score++;
-
 		;}
+		// else if (
+		// 	//click on same card twice
+		// 	) {
+		// 	reset();
+		// }
 		else {
 			document.querySelector(".matchMessage").innerHTML="Sorry, try again.";
-			document.querySelector(".matchMessage").style.color="#F15B31s";
-
+			document.querySelector(".matchMessage").style.color="#F15B31";
 		;}
 	};
 	if (cardsInPlay.length ===3) {
@@ -71,10 +74,12 @@ var reset = function() {
 	document.querySelectorAll("img")[i].setAttribute("src", "images/back.png");
 	}
 	cardsInPlay = [];
-	document.querySelector(".matchMessage").innerHTML="";
+	document.querySelector(".matchMessage").innerHTML=" ";
 
 };
 
 var button = document.getElementById("button");
 button.addEventListener("click", reset);
+
+
 
