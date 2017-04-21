@@ -55,12 +55,11 @@ createBoard();
 
 var reset = function() {
 	console.log("reset button clicked");
-	for (var i=0; i<cardsInPlay.length; i++) {
+	for (var i=0; i<cards.length; i++) {
 	document.querySelectorAll("img")[i].setAttribute("src", "images/back.png");
 	}
 };
 
 var button = document.getElementById("button");
 button.addEventListener("click", reset);
-
 
