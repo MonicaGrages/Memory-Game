@@ -26,8 +26,20 @@ var cardsInPlay = [];
 
 var checkForMatch = function() {
 	if (cardsInPlay.length === 2) {
-	if (cardsInPlay[0] === cardsInPlay[1]) {alert("You found a match!");}
-	else {alert("Sorry, try again.");}
+		if (cardsInPlay[0] === cardsInPlay[1]) {
+			document.querySelector(".matchMessage").innerHTML="You found a match!";
+			document.querySelector(".matchMessage").style.color="#00A6B3";
+			// score++;
+
+		;}
+		else {
+			document.querySelector(".matchMessage").innerHTML="Sorry, try again.";
+			document.querySelector(".matchMessage").style.color="#F15B31s";
+
+		;}
+	};
+	if (cardsInPlay.length ===3) {
+		reset();
 	};
 };
 
@@ -59,6 +71,8 @@ var reset = function() {
 	document.querySelectorAll("img")[i].setAttribute("src", "images/back.png");
 	}
 	cardsInPlay = [];
+	document.querySelector(".matchMessage").innerHTML="";
+
 };
 
 var button = document.getElementById("button");
