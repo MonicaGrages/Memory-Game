@@ -60,6 +60,8 @@ var createBoard = function () {
  	cardElement.setAttribute("data-id", i);
  	cardElement.addEventListener("click", flipCard);
  	document.getElementById('game-board').appendChild(cardElement);
+ 	cards.sort(function(a,b){return 0.5 - Math.random()});
+
  }
 };
 
@@ -72,7 +74,7 @@ var cardReset = function() {
 	}
 	cardsInPlay = [];
 	document.querySelector(".matchMessage").innerHTML=" ";
-
+	cards.sort(function(a,b){return 0.5 - Math.random()});
 };
 
 var cardButton = document.getElementById("card-reset");
