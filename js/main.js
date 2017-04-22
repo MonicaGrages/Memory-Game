@@ -39,7 +39,11 @@ var checkForMatch = function() {
 		;}
 	};
 	if (cardsInPlay.length ===3) {
-		cardReset();
+		for (var i=0; i<cards.length; i++) {
+		document.querySelectorAll("img")[i].setAttribute("src", "images/back.png");
+		};
+		document.querySelector(".matchMessage").innerHTML=" ";
+		cardsInPlay = [];
 	};
 };
 
@@ -62,16 +66,15 @@ var createBoard = function () {
  	document.getElementById('game-board').appendChild(cardElement);
  	cards.sort(function(a,b){return 0.5 - Math.random()});
 
- }
+ };
 };
 
 createBoard();
 
 var cardReset = function() {
-	console.log("card reset button clicked");
 	for (var i=0; i<cards.length; i++) {
-	document.querySelectorAll("img")[i].setAttribute("src", "images/back.png");
-	}
+		document.querySelectorAll("img")[i].setAttribute("src", "images/back.png");
+	};
 	cardsInPlay = [];
 	document.querySelector(".matchMessage").innerHTML=" ";
 	cards.sort(function(a,b){return 0.5 - Math.random()});
@@ -85,7 +88,6 @@ document.querySelector(".scoreMessage").innerHTML="Your score is: "+score;
 
 
 var scoreReset = function () {
-	console.log("score reset button clicked");
 	score = 0;
 	document.querySelector(".scoreMessage").innerHTML="Your score is: "+score;
 
