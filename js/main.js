@@ -29,20 +29,17 @@ var checkForMatch = function() {
 		if (cardsInPlay[0] === cardsInPlay[1]) {
 			document.querySelector(".matchMessage").innerHTML="You found a match!";
 			document.querySelector(".matchMessage").style.color="#00A6B3";
-			// score++;
+			score++;
+			document.querySelector(".scoreMessage").innerHTML="Your score is: "+score;
+
 		;}
-		// else if (
-		// 	//click on same card twice
-		// 	) {
-		// 	reset();
-		// }
 		else {
 			document.querySelector(".matchMessage").innerHTML="Sorry, try again.";
 			document.querySelector(".matchMessage").style.color="#F15B31";
 		;}
 	};
 	if (cardsInPlay.length ===3) {
-		reset();
+		cardReset();
 	};
 };
 
@@ -68,8 +65,8 @@ var createBoard = function () {
 
 createBoard();
 
-var reset = function() {
-	console.log("reset button clicked");
+var cardReset = function() {
+	console.log("card reset button clicked");
 	for (var i=0; i<cards.length; i++) {
 	document.querySelectorAll("img")[i].setAttribute("src", "images/back.png");
 	}
@@ -78,8 +75,19 @@ var reset = function() {
 
 };
 
-var button = document.getElementById("button");
-button.addEventListener("click", reset);
+var cardButton = document.getElementById("card-reset");
+cardButton.addEventListener("click", cardReset);
+
+var score=0;
+document.querySelector(".scoreMessage").innerHTML="Your score is: "+score;
 
 
+var scoreReset = function () {
+	console.log("score reset button clicked");
+	score = 0;
+	document.querySelector(".scoreMessage").innerHTML="Your score is: "+score;
 
+};
+
+var scoreButton = document.getElementById("score-reset");
+scoreButton.addEventListener("click", scoreReset);
