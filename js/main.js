@@ -32,7 +32,6 @@ var checkForMatch = function() {
 			score++;
 			document.querySelector(".scoreMessage").innerHTML="Your score is: "+score;
 			console.log("User found a match. Score +1")
-
 		;}
 		else {
 			document.querySelector(".matchMessage").innerHTML="Sorry, try again.";
