@@ -52,7 +52,7 @@ var flipCard = function() {
 	if (this.getAttribute("src") !== "images/back.png") /*user clicks face up card*/{
 		for (var i=0; i<cards.length; i++) {
 			document.querySelectorAll("img")[i].setAttribute("src", "images/back.png"); /*turn all cards back over*/
-		};	
+		};
 		document.querySelector(".matchMessage").innerHTML=" ";
 		cardsInPlay = [];
 	}
