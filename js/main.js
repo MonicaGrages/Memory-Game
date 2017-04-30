@@ -27,14 +27,14 @@ var cardsInPlay = [];
 var checkForMatch = function() {
 	if (cardsInPlay.length === 2) {
 		if (cardsInPlay[0] === cardsInPlay[1]) {
-			document.querySelector(".matchMessage").innerHTML="You found a match!";
+			document.querySelector(".matchMessage").innerHTML="<span class='glyphicon glyphicon-thumbs-up'></span>  You found a match!";
 			document.querySelector(".matchMessage").style.color="#00A6B3";
 			score++;
 			document.querySelector(".scoreMessage").innerHTML="Your score is: "+score;
 			console.log("User found a match. Score +1")
 		;}
 		else {
-			document.querySelector(".matchMessage").innerHTML="Sorry, try again.";
+			document.querySelector(".matchMessage").innerHTML="<span class='glyphicon glyphicon-thumbs-down'></span>  Sorry, try again.";
 			document.querySelector(".matchMessage").style.color="#F15B31";
 			console.log("Mismatch")
 		;}
